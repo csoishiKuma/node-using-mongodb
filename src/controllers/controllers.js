@@ -14,8 +14,8 @@ export const addnewProduct = (req, res) => {
     });
 }
 
-export function getProducts(req, res) {
-    Product.find((err, Product) => {
+export const getProducts = (req, res) => {
+    Product.find({}, (err, Product) => {
         if (err) {
             res.send(err);
         }
@@ -23,8 +23,8 @@ export function getProducts(req, res) {
     });
 }
 
-export function getProductWithID(req, res) {
-    Product.findById((req.params.ProductID), err, Product) {
+export const getProductWithID = (req, res) => {
+    Product.findById((req.params.ProductID), (err, Product) => {
         if (err) {
             res.send(err);
         }

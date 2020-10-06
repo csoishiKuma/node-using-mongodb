@@ -1,16 +1,19 @@
-import { addnewProduct } from '../controllers/controllers';
-import { getProducts } from '../controllers/controllers';
+import { addnewProduct,
+        getProducts,
+        getProductWithID } from '../controllers/controllers';
 
 const routes = (app) => {
     app.route('/products')
+        //Get multiple products
+        .get(getProducts)
     
         //Post endpoint
         .post(addnewProduct);
 
-    app.route('/products')
+    app.route('/products/:ProductID')
 
-        //Get endpoint
-        .get(getProducts);
+        //Get a specific product with an ID
+        .get(getProductWithID);
 }
 
 export default routes;
