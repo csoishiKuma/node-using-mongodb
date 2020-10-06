@@ -20,7 +20,7 @@ export const getProducts = (req, res) => {
             res.send(err);
         }
         res.json(Product);
-    });
+    })
 }
 
 export const getProductWithID = (req, res) => {
@@ -29,5 +29,5 @@ export const getProductWithID = (req, res) => {
             res.send(err);
         }
         res.json(Product);
-    });
+    })
 }
